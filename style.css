@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+*{
+  color:rgb(29, 29, 29);;
+  font-family:'Open Sans';
+}
+
+nav{
+  margin:0;
+}
+
+ul{
+  display:flex;
+  justify-content:center;
+  margin:0;
+  padding:0;  
+  font-size:20px;
+}
+
+header li{
+  list-style:none;
+  margin-right:30px;
+}
+
+a:hover{
+  color:rgb(203, 91, 125);
+}
+
+div{
+  
+}
