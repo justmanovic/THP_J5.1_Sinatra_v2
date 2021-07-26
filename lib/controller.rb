@@ -7,33 +7,33 @@ class ApplicationController < Sinatra::Base
     erb :index, locals:{ragots: Gossip.read_all}
   end
 
-  get '/gossips/new/' do
+  get '/gossips/new/' do # Quand on clique sur 'Ajouter un gossip'
     erb :new_gossip
   end
 
-  post '/gossips/new/' do
+  post '/gossips/new/' do # Quand on envoie le formulaire
     Gossip.new(params[:gossip_author],params[:gossip_content]).save
     erb :new_gossip_confirmation
   end
 
-  get '/gossips/confirm/' do
+  get '/gossips/confirm/' do # La page de confirmation après avoir posté un gossip
     erb :new_gossip_confirmation
   end
 
-  get '/gossip/:num_gossip/' do
+  get '/gossip/:num_gossip/' do # Quand on clique sur 'voir le gossip'
     erb :show_one, locals:{ragots: Gossip.read_all, gossip_numb:params[:num_gossip]}
   end
 
-  get '/gossipmodif/:num_edit/edit/' do
+  get '/gossip/:num_edit/edit/' do 
     erb :edit, locals:{ragots: Gossip.read_all, gossip_numb:params[:num_edit]}
   end
 
-  post '/gossipmodif/:num/edit/' do
+  post '/gossip/:num/edit/' do
     Gossip.edit(params[:gossip_author_updated],params[:gossip_content_updated],params[:num])
-    redirect '/gossipmodif/edit/confirm/'
+    redirect '/gossip/edit/confirm/'
   end
 
-  get '/gossipmodif/edit/confirm/' do
+  get '/gossip/edit/confirm/' do
     erb :edit_confirm
   end
 

@@ -49,11 +49,11 @@
       </ul>
     </nav>
   </header> 
-  <h1>Editer le potin !</h1>
-  <h1><%=params[:num_edit]%></h1>
-    <form action='/gossipmodif/<%=gossip_numb%>/edit/' method='POST'>
-        Edite l auteur :  <input type="text" name="gossip_author_updated"/><br/>
-        Edite le contenu : <input type="text" name="gossip_content_updated"/><br/>
+  <h1>Editer le potin n°<%=params[:num_edit]%></h1>
+    <form action='/gossip/<%=gossip_numb%>/edit/' method='POST'>
+        Editer l auteur :  <input type="text" name="gossip_author_updated"/><br/>
+        Editer le contenu : <input type="text" name="gossip_content_updated"/><br/>
+        <p>déso pour lortographe 😄</p>
       <input type="submit"/>
     </form>
   </body>
